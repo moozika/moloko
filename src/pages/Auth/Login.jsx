@@ -5,7 +5,7 @@ import { useAuth } from '../../lib/useAuth';
 
 const Login = () => {
   const history = useHistory();
-  const user = useAuth();
+  const { user } = useAuth();
   return (
     <div className='flex flex-col items-center justify-center bg-slate-900 w-screen h-screen'>
       {!user ? (
