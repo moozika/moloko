@@ -1,7 +1,7 @@
 import React from 'react';
 import { useHistory, Redirect } from 'react-router-dom';
 import {BsSpotify} from "react-icons/bs";
-import { useAuth } from '../../lib/auth';
+import { useAuth } from '../../lib/useAuth';
 
 const Login = () => {
   const history = useHistory();

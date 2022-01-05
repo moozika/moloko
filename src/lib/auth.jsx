@@ -6,10 +6,6 @@ import storage from '../utils/storage';
 // Auth Context
 export const AuthContext = createContext(null);
 
-// Use Auth Hook
-export const useAuth = () => {
-  return useContext(AuthContext);
-}
 
 // fetch user profile
 export const fetchUser = async() => {

@@ -1,9 +1,10 @@
 import React from 'react';
 import { useHistory } from 'react-router-dom';
-import { useAuth, logout} from '../lib/auth';
+import { logout} from '../lib/auth';
+import { useAuth } from '../lib/useAuth';
 
 const Nav = () => {
-  const user = useAuth();
+  const { user } = useAuth();
   const history = useHistory();
 
   const handleLogout = () => {
