@@ -1,9 +1,9 @@
-import axios from "axios";
 import storage from "../../../utils/storage";
+import { axios } from '../../../lib/axios';
 
 export const editMood = async(name, vibes, songs, description, id) => {
   console.log(name, vibes, songs, description)
-  return await axios.post(`https://moozika.herokuapp.com/api/mood/${id}/edit`,  {
+  return await axios.post(`/api/v1/mood/${id}/edit`,  {
     name: name,
     vibes: vibes,
     songs: songs,

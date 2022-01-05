@@ -13,7 +13,7 @@ const authRequestInterceptor = (config) => {
 };
 
 export const axios = Axios.create({
-  baseURL: '92.168.5.164:8000',
+  baseURL: process.env.PROD ? 'https://moozika.herokuapp.com' : 'https://moozika-dev.herokuapp.com',
 })
 
 axios.interceptors.request.use(authRequestInterceptor);

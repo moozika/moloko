@@ -1,8 +1,8 @@
-import axios from "axios";
 import storage from "../../../utils/storage";
+import { axios } from '../../../lib/axios';
 
 export const getMood = async(id) => {
-  return await axios.get(`https://moozika.herokuapp.com/api/mood/${id}`,  {
+  return await axios.get(`/api/v1/mood/${id}`,  {
     headers: {
       'access_token': storage.getToken(),
     },

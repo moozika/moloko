@@ -13,12 +13,16 @@ function App() {
   return (
     <AuthProvider>
       <Router>
-          <Route exact path={'/'} component={Login} />
-          <Route path={'/login'} component={SpotifyLogin} />
-          <Route path={'/auth'} component={AuthRedirect} />
-          <Route path={'/dashboard'} component={Dashboard} />
-          <Route path={'/create'} component={Create} />
-          <Route exact path={'/mood'} component={Mood} />
+        <div>
+          <Switch>
+            <Route path={'/login'} component={SpotifyLogin} />
+            <Route path={'/auth'} component={AuthRedirect} />
+            <Route path={'/dashboard'} component={Dashboard} />
+            <Route path={'/create'} component={Create} />
+            <Route path={'/mood'} component={Mood} />
+            <Route exact path={'/'} component={Login} />
+          </Switch>
+        </div>
       </Router>
     </AuthProvider>
   );

@@ -1,11 +1,11 @@
-import axios from "axios";
 import storage from "../../../utils/storage";
+import { axios } from '../../../lib/axios';
 
 export const getSongs = async(ids) => {
   let songs = []
 
   for(let idx = 0; idx < ids.length; idx++) {
-    let res = await axios.get(`https://moozika.herokuapp.com/api/songs/${ids[idx]}`,  {
+    let res = await axios.get(`/api/v1/songs/${ids[idx]}`,  {
       headers: {
         'access_token': storage.getToken(),
       },

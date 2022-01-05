@@ -6,6 +6,7 @@ import { useAuth } from '../lib/auth';
 
 const Layout = ({children, noNav = false}) => {
   const user = useAuth();
+  console.log(user);
   return (
     <div className='w-screen min-h-screen flex flex-col items-center bg-slate-900'>
       {user ? (

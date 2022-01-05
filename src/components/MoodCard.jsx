@@ -26,7 +26,10 @@ const MoodCard = ({id, create = false, name,  vibes,  likes, noControl = false, 
             <div className=' flex space-x-4'>
               <button className='opacity-70 hover:opacity-100' onClick={onEdit}> ✏️ Edit</button>
               <div className='h-6 border-r-2 border-slate-700'/>
-              <button onClick={onDelete} className='opacity-70 hover:opacity-100'> 🗑️ Delete</button>
+              <button onClick={(event) => {
+                event.stopPropagation();
+                onDelete()
+              }} className='opacity-70 hover:opacity-100'> 🗑️ Delete</button>
             </div>
           }
         </div>

@@ -52,8 +52,7 @@ const Create = () => {
     if (edit){
       await editMood(name, selectedVibes.map(v => v.name) , selectedSongs.map(s => s.id), description, edit?.id).then((res) => history.push('/dashboard'));
     } else {
-
-      await createMood(name, selectedVibes.map(v => v.name) , selectedSongs.map(s => s.id), description).then((res) => history.push('/dashboard'));
+      await createMood(name, selectedVibes, selectedSongs.map(s => s.id), description).then((res) => history.push('/dashboard'));
     }
   }
 
