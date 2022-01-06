@@ -14,26 +14,18 @@ const Mood = () => {
   const search = useLocation().search;
   const query = new URLSearchParams(search).get('id');
   const id  = JSON.parse(query)
-  console.log(id);
 
   useEffect(() => {
     getMood(id).then((res) => {
       setMood(res.data)
-      console.log(res.data);
       getSongs(res.data.songs).then((songs) => setSongs(songs))
-    })
-  }, [])
-
-  useEffect(() => {
+    });
     getRecommendations(id).then((res) => setRecs(res.data));
-    console.log(recs)
   }, [])
-
 
   return (
     <Layout noNav>
       <div className='absolute blue-gradient h-large w-large -top-100 -right-100 opacity-10' />
-      {mood && songs &&
         <div className='p-8'>
           <div className='w-full flex flex-col h-96 justify-center space-y-2' >
             <div className='flex items-center space-x-4'>
@@ -82,7 +74,6 @@ const Mood = () => {
             ))}
           </div>
         </div>
-      }
     </Layout>
   )
 }

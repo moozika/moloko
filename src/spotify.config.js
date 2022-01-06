@@ -1,5 +1,5 @@
 const authEndpoint = "https://accounts.spotify.com/authorize";
-const redirectUri = "http://moozika.netlify.app/auth";
+const redirectUri = "http://localhost:3000/auth";
 const clientId = 'a081ffae612e47778c0c8b02e8d2b842';
 
 const scopes = [

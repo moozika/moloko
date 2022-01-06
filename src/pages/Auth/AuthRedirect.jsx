@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 import { Redirect } from 'react-router-dom';
 import storage from '../../utils/storage';
+import Loader from '../../components/Loader';
 
 const AuthRedirect = () => {
   const [isLoading, setIsLoading] = useState(true);
@@ -21,7 +22,7 @@ const AuthRedirect = () => {
   return (
     <div>
       {isLoading ? (
-        <h1>Loading ...</h1>
+        <Loader />
       ) : (
         <Redirect to='/dashboard' />
       )}
